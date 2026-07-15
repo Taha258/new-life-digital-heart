@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Send, Lock } from "lucide-react";
 import { toast } from "sonner";
+import heroContact from "@/assets/hero-contact.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,6 +24,8 @@ function Contact() {
         eyebrow="Reach out"
         title="We'd love to hear from you."
         description="Have a question, need prayer, or just want to say hello? Our team reads every message."
+        image={heroContact}
+        imageAlt="Hands folded in prayer over an open Bible"
       />
 
       <section className="py-16 md:py-24">

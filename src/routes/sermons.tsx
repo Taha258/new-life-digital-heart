@@ -5,6 +5,7 @@ import { Play, Search, Radio, Clock } from "lucide-react";
 import c1 from "@/assets/community-1.jpg";
 import c3 from "@/assets/community-3.jpg";
 import hero from "@/assets/hero-church.jpg";
+import heroSermons from "@/assets/hero-sermons.jpg";
 
 export const Route = createFileRoute("/sermons")({
   head: () => ({

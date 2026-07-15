@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Sparkles, Users, Heart, Baby, Music, HandHeart, Coffee, Globe, ArrowRight } from "lucide-react";
+import heroMinistries from "@/assets/hero-ministries.jpg";
 
 export const Route = createFileRoute("/ministries")({
   head: () => ({
@@ -32,6 +33,8 @@ function Ministries() {
         eyebrow="Get involved"
         title="A place for every season."
         description="However you're wired, whatever you love — there's a spot at New Life where you belong and can make a difference."
+        image={heroMinistries}
+        imageAlt="Volunteers serving together in community"
       />
       <section className="py-20 md:py-28">
         <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
