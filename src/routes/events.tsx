@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
+import heroEvents from "@/assets/hero-events.jpg";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -29,6 +30,8 @@ function Events() {
         eyebrow="What's happening"
         title="Upcoming events"
         description="From Sunday gatherings to retreats and service days — we'd love for you to join us."
+        image={heroEvents}
+        imageAlt="Evening community gathering with candles and lights"
       />
       <section className="py-16 md:py-24">
         <div className="container-page space-y-5 max-w-4xl">

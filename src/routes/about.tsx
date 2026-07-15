@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import pastor from "@/assets/pastor.jpg";
 import c1 from "@/assets/community-1.jpg";
+import heroAbout from "@/assets/hero-about.jpg";
 import { Compass, Sprout, Heart, Users } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -45,6 +46,8 @@ function About() {
         eyebrow="Our Story"
         title="Rooted in grace, growing in love."
         description="Since 1978, New Life Christian Fellowship has been a spiritual home for generations of families across our city."
+        image={heroAbout}
+        imageAlt="Congregation gathered in the sanctuary"
       />
 
       <section className="py-20 md:py-28">
