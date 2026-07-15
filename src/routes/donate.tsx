@@ -39,6 +39,8 @@ function Donate() {
         eyebrow="Give with joy"
         title="Partner with what God is doing."
         description="Your generosity fuels weekly ministry, global missions, and mercy for our neighbors."
+        image="/donation-support.webp"
+        imageAlt="Donation support for the church community"
       />
       <section className="py-12 sm:py-16 md:py-24">
         <div className="container-page grid gap-8 sm:gap-10 lg:grid-cols-[1.4fr_1fr] max-w-5xl px-4 sm:px-6">
