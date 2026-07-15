@@ -1,29 +1,90 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
-import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowRight, Check } from "lucide-react";
+import { toast } from "sonner";
 import heroEvents from "@/assets/hero-events.jpg";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
     meta: [
       { title: "Events — New Life Christian Fellowship" },
-      { name: "description", content: "Upcoming church events, retreats, and community gatherings." },
+      {
+        name: "description",
+        content: "Upcoming church events, retreats, and community gatherings.",
+      },
       { property: "og:title", content: "Events at New Life" },
-      { property: "og:description", content: "See what's coming up and RSVP for our next gathering." },
+      {
+        property: "og:description",
+        content: "See what's coming up and RSVP for our next gathering.",
+      },
     ],
   }),
   component: Events,
 });
 
 const events = [
-  { date: "Nov 24", day: "Sunday", time: "6:00 PM", title: "Thanksgiving Community Dinner", loc: "Main Hall", desc: "A shared table, live worship, and short reflections. Bring a friend and a side dish." },
-  { date: "Dec 07", day: "Saturday", time: "10:00 AM", title: "Serve Day: Downtown Cleanup", loc: "City Center", desc: "Meet neighbors, serve the city, and share the love of Jesus in practical ways." },
-  { date: "Dec 15", day: "Sunday", time: "5:00 PM", title: "Christmas Eve Candlelight Service", loc: "Sanctuary", desc: "Carols, candles, and the wonder of Christ's arrival. All are welcome." },
-  { date: "Jan 10", day: "Friday", time: "7:00 PM", title: "Prayer & Vision Night", loc: "Chapel", desc: "Kick off the new year with worship and prayer for our church and city." },
-  { date: "Feb 14", day: "Friday", time: "6:30 PM", title: "Marriage Retreat Weekend", loc: "Cedar Springs Retreat Center", desc: "Two nights away to invest in your marriage. Childcare provided." },
+  {
+    date: "Nov 24",
+    day: "Sunday",
+    time: "6:00 PM",
+    title: "Thanksgiving Community Dinner",
+    loc: "Main Hall",
+    desc: "A shared table, live worship, and short reflections. Bring a friend and a side dish.",
+  },
+  {
+    date: "Dec 07",
+    day: "Saturday",
+    time: "10:00 AM",
+    title: "Serve Day: Downtown Cleanup",
+    loc: "City Center",
+    desc: "Meet neighbors, serve the city, and share the love of Jesus in practical ways.",
+  },
+  {
+    date: "Dec 15",
+    day: "Sunday",
+    time: "5:00 PM",
+    title: "Christmas Eve Candlelight Service",
+    loc: "Sanctuary",
+    desc: "Carols, candles, and the wonder of Christ's arrival. All are welcome.",
+  },
+  {
+    date: "Jan 10",
+    day: "Friday",
+    time: "7:00 PM",
+    title: "Prayer & Vision Night",
+    loc: "Chapel",
+    desc: "Kick off the new year with worship and prayer for our church and city.",
+  },
+  {
+    date: "Feb 14",
+    day: "Friday",
+    time: "6:30 PM",
+    title: "Marriage Retreat Weekend",
+    loc: "Cedar Springs Retreat Center",
+    desc: "Two nights away to invest in your marriage. Childcare provided.",
+  },
 ];
 
 function Events() {
+  const listRef = useScrollReveal();
+  const [registered, setRegistered] = useState<Set<number>>(new Set());
+
+  const handleRSVP = (index: number, title: string) => {
+    setRegistered((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+        toast.success(`Unregistered from "${title}"`);
+      } else {
+        next.add(index);
+        toast.success(`You're registered for "${title}"!`);
+      }
+      return next;
+    });
+  };
+
   return (
     <>
       <PageHeader
@@ -33,30 +94,58 @@ function Events() {
         image={heroEvents}
         imageAlt="Evening community gathering with candles and lights"
       />
-      <section className="py-16 md:py-24">
-        <div className="container-page space-y-5 max-w-4xl">
-          {events.map((e) => (
-            <article key={e.title} className="group grid gap-6 md:grid-cols-[160px_1fr_auto] items-center bg-white border border-border/60 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all">
-              <div className="text-center bg-cream rounded-2xl py-6 border border-border/50">
-                <div className="font-serif text-3xl text-primary">{e.date}</div>
-                <div className="text-xs uppercase tracking-widest text-gold font-semibold mt-1">{e.day}</div>
-              </div>
-              <div>
-                <h3 className="font-serif text-2xl text-primary">{e.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
-                <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-gold" />{e.time}</span>
-                  <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5 text-gold" />{e.loc}</span>
+      <section ref={listRef} className="reveal py-12 sm:py-16 md:py-24">
+        <div className="container-page space-y-4 sm:space-y-5 max-w-4xl px-4 sm:px-6">
+          {events.map((e, i) => (
+            <article
+              key={e.title}
+              className={`stagger-${Math.min(i + 1, 5)} group grid gap-4 sm:gap-6 sm:grid-cols-[160px_1fr_auto] items-center bg-white border border-border/60 rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300`}
+            >
+              <div className="text-center bg-cream rounded-2xl py-5 sm:py-6 border border-border/50">
+                <div className="font-serif text-2xl sm:text-3xl text-primary">{e.date}</div>
+                <div className="text-xs uppercase tracking-widest text-gold font-semibold mt-1">
+                  {e.day}
                 </div>
               </div>
-              <button className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold hover:bg-royal-deep transition-colors whitespace-nowrap">
-                RSVP <ArrowRight className="h-4 w-4" />
+              <div>
+                <h3 className="font-serif text-xl sm:text-2xl text-primary">{e.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
+                <div className="mt-3 flex flex-wrap gap-3 sm:gap-4 text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="h-3.5 w-3.5 text-gold" />
+                    {e.time}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="h-3.5 w-3.5 text-gold" />
+                    {e.loc}
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => handleRSVP(i, e.title)}
+                className={
+                  "inline-flex items-center justify-center gap-2 rounded-full px-5 sm:px-6 py-3 text-sm font-semibold transition-all whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] " +
+                  (registered.has(i)
+                    ? "bg-green-600 text-white hover:bg-green-700"
+                    : "bg-primary text-primary-foreground hover:bg-royal-deep")
+                }
+              >
+                {registered.has(i) ? (
+                  <>
+                    <Check className="h-4 w-4" /> Registered
+                  </>
+                ) : (
+                  <>
+                    RSVP <ArrowRight className="h-4 w-4" />
+                  </>
+                )}
               </button>
             </article>
           ))}
-          <div className="pt-8 text-center">
+          <div className="pt-6 sm:pt-8 text-center">
             <p className="inline-flex items-center gap-2 text-muted-foreground text-sm">
-              <Calendar className="h-4 w-4 text-gold" /> Want the full calendar? Email events@newlifecf.org
+              <Calendar className="h-4 w-4 text-gold" /> Want the full calendar? Email
+              events@newlifecf.org
             </p>
           </div>
         </div>
