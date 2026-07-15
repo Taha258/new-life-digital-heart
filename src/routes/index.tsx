@@ -40,6 +40,7 @@ function Index() {
   const serviceTimesRef = useScrollReveal();
   const pastorRef = useScrollReveal();
   const quickLinksRef = useScrollReveal();
+  const welcomeRef = useScrollReveal();
   const donateRef = useScrollReveal();
   const testimonialsRef = useScrollReveal();
 
@@ -228,6 +229,52 @@ function Index() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WELCOME SECTION */}
+      <section ref={welcomeRef} className="reveal py-16 sm:py-20 md:py-28">
+        <div className="container-page">
+          <div className="grid gap-8 md:grid-cols-2 items-center">
+            <div className="relative overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/church image.jpg"
+                alt="New Life Christian Fellowship church building"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.28em] text-gold font-semibold">
+                Welcome Home
+              </p>
+              <h2 className="mt-3 text-3xl sm:text-4xl text-primary leading-tight">
+                A church that feels like family
+              </h2>
+              <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                New Life Christian Fellowship is more than a Sunday service. It is a place where
+                friendships are formed, faith is strengthened, and lives are changed by the love of
+                Christ.
+              </p>
+              <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+                Whether you have been walking with Jesus for years or are just beginning to explore
+                faith, you belong here. Our doors and hearts are open to you.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                >
+                  Plan Your Visit
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

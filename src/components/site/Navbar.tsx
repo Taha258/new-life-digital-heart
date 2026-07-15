@@ -46,16 +46,12 @@ export function Navbar() {
         )}
       >
         <div className="container-page flex h-18 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-3 group">
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-primary text-primary-foreground font-serif text-xl shadow-sm group-hover:shadow-md transition-shadow">
-              N
-            </span>
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-serif text-lg text-primary">New Life</span>
-              <span className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                Christian Fellowship
-              </span>
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/New Life Christian Fellowship - Logo Design - FF.png"
+              alt="New Life Christian Fellowship"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

@@ -16,15 +16,11 @@ export function Footer() {
       >
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-gold text-gold-foreground font-serif text-xl">
-              N
-            </span>
-            <div className="leading-tight">
-              <div className="font-serif text-lg">New Life</div>
-              <div className="text-[11px] uppercase tracking-[0.18em] opacity-70">
-                Christian Fellowship
-              </div>
-            </div>
+            <img
+              src="/New Life Christian Fellowship - Logo Design - FF.png"
+              alt="New Life Christian Fellowship"
+              className="h-11 w-auto object-contain"
+            />
           </div>
           <p className="mt-5 text-sm opacity-80 leading-relaxed">
             A place to belong, a family in Christ. Come as you are - you are loved here.
