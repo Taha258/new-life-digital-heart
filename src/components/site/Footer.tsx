@@ -1,0 +1,97 @@
+import { Link } from "@tanstack/react-router";
+import { Facebook, Instagram, Youtube, MapPin, Mail, Phone, Heart } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="mt-20 bg-primary text-primary-foreground">
+      <div className="container-page py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <div className="flex items-center gap-3">
+            <span className="grid h-11 w-11 place-items-center rounded-full bg-gold text-gold-foreground font-serif text-xl">
+              N
+            </span>
+            <div className="leading-tight">
+              <div className="font-serif text-lg">New Life</div>
+              <div className="text-[11px] uppercase tracking-[0.18em] opacity-70">
+                Christian Fellowship
+              </div>
+            </div>
+          </div>
+          <p className="mt-5 text-sm opacity-80 leading-relaxed">
+            A place to belong, a family in Christ. Come as you are — you are loved here.
+          </p>
+          <div className="mt-6 flex gap-3">
+            {[Facebook, Instagram, Youtube].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                aria-label="social"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-gold hover:text-gold-foreground hover:border-gold transition-colors"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-serif text-lg text-gold">Quick Links</h4>
+          <ul className="mt-5 space-y-3 text-sm opacity-90">
+            {[
+              ["About Us", "/about"],
+              ["Ministries", "/ministries"],
+              ["Sermons", "/sermons"],
+              ["Events", "/events"],
+              ["Prayer Request", "/contact"],
+              ["Give", "/donate"],
+            ].map(([label, to]) => (
+              <li key={to}>
+                <Link to={to} className="hover:text-gold transition-colors">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-serif text-lg text-gold">Service Times</h4>
+          <ul className="mt-5 space-y-3 text-sm opacity-90">
+            <li><span className="font-semibold">Sunday Worship</span><br />9:00 AM & 11:00 AM</li>
+            <li><span className="font-semibold">Midweek Study</span><br />Wednesday, 7:00 PM</li>
+            <li><span className="font-semibold">Prayer Meeting</span><br />Friday, 6:30 PM</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-serif text-lg text-gold">Stay Connected</h4>
+          <p className="mt-5 text-sm opacity-80">
+            Weekly encouragement and updates from our church family.
+          </p>
+          <form className="mt-4 flex gap-2" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              required
+              placeholder="Your email"
+              className="flex-1 rounded-full bg-white/10 border border-white/20 px-4 py-2.5 text-sm placeholder:text-white/50 focus:outline-none focus:border-gold"
+            />
+            <button className="rounded-full bg-gold px-4 py-2.5 text-sm font-semibold text-gold-foreground">
+              Join
+            </button>
+          </form>
+          <ul className="mt-6 space-y-2 text-sm opacity-90">
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-gold" />123 Grace Avenue, Springfield</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-gold" />(555) 123-4567</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-gold" />hello@newlifecf.org</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="container-page py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs opacity-70">
+          <p>© {new Date().getFullYear()} New Life Christian Fellowship. All rights reserved.</p>
+          <p className="flex items-center gap-1.5">Made with <Heart className="h-3 w-3 text-gold fill-gold" /> for our community</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
