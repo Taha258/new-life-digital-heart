@@ -19,7 +19,7 @@ export function Footer() {
             <img
               src="/New Life Christian Fellowship - Logo Design - FF.png"
               alt="New Life Christian Fellowship"
-              className="h-11 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
           <p className="mt-5 text-sm opacity-80 leading-relaxed">

@@ -50,7 +50,7 @@ export function Navbar() {
             <img
               src="/New Life Christian Fellowship - Logo Design - FF.png"
               alt="New Life Christian Fellowship"
-              className="h-10 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </Link>
 
