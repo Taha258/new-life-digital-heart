@@ -323,7 +323,7 @@ function Index() {
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             {[
               {
-                img: c1,
+                img: "/Family church.jpeg",
                 quote: "I walked in as a stranger and left as family.",
                 name: "Marcus R.",
               },
@@ -333,7 +333,7 @@ function Index() {
                 name: "The Alvarez Family",
               },
               {
-                img: c3,
+                img: "/card3.jpg",
                 quote: "Worshiping here has changed how I see God - closer, kinder.",
                 name: "Priya S.",
               },
