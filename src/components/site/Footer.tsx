@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, MapPin, Mail, Phone, Heart, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Youtube, MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function Footer() {
@@ -135,9 +135,6 @@ export function Footer() {
         <div className="container-page py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs opacity-70">
           <p>
             &copy; {new Date().getFullYear()} New Life Christian Fellowship. All rights reserved.
-          </p>
-          <p className="flex items-center gap-1.5">
-            Made with <Heart className="h-3 w-3 text-gold fill-gold" /> for our community
           </p>
         </div>
       </div>
