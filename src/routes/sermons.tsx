@@ -50,6 +50,8 @@ function Sermons() {
         eyebrow="Sermons & Livestream"
         title="Messages of hope, week by week."
         description="Whether you're catching up or worshiping with us live, God's Word is for you."
+        image={heroSermons}
+        imageAlt="Open Bible on a pulpit in a lit sanctuary"
       />
 
       {/* Livestream */}
