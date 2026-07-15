@@ -58,8 +58,8 @@ const beliefs = [
 
 const leaders = [
   { name: "Pastor David Thompson", role: "Senior Pastor", img: pastor },
-  { name: "Sarah Thompson", role: "Women's Ministry Lead", img: c2 },
-  { name: "Michael Chen", role: "Worship Pastor", img: c1 },
+  { name: "Sarah Thompson", role: "Women's Ministry Lead", img: "/Sarah Thompson.jpg" },
+  { name: "Michael Chen", role: "Worship Pastor", img: "/Michael Chen.jpg" },
   { name: "Grace Okafor", role: "Youth Pastor", img: c3 },
 ];
 
