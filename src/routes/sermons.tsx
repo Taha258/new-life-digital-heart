@@ -14,12 +14,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/sermons")({
   head: () => ({
     meta: [
-      { title: "Sermons & Livestream — New Life Christian Fellowship" },
+      { title: "Sermons & Livestream - New Life Christian Fellowship" },
       {
         name: "description",
         content: "Watch or listen to recent sermons and join our Sunday livestream.",
       },
-      { property: "og:title", content: "Sermons — New Life" },
+      { property: "og:title", content: "Sermons - New Life" },
       {
         property: "og:description",
         content: "Catch up on messages and worship with us live each Sunday.",

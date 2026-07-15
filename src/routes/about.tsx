@@ -17,7 +17,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — New Life Christian Fellowship" },
+      { title: "About - New Life Christian Fellowship" },
       {
         name: "description",
         content: "Our story, mission, and beliefs at New Life Christian Fellowship.",
@@ -44,7 +44,7 @@ const beliefs = [
   },
   {
     q: "Salvation",
-    a: "By grace alone, through faith alone, in Christ alone — a free gift for all who believe.",
+    a: "By grace alone, through faith alone, in Christ alone - a free gift for all who believe.",
   },
   {
     q: "The Church",
@@ -95,8 +95,8 @@ function About() {
             </h2>
             <p className="mt-5 text-sm sm:text-base text-muted-foreground leading-relaxed">
               What started as a small prayer group meeting in a family living room has grown into a
-              vibrant community of over 800 members. Through every season — celebrations, losses,
-              revivals, and rebuilds — we've held tightly to one conviction: Jesus is worth it all.
+              vibrant community of over 800 members. Through every season - celebrations, losses,
+              revivals, and rebuilds - we've held tightly to one conviction: Jesus is worth it all.
             </p>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
               Today, we gather across two Sunday services, midweek studies, and dozens of small
@@ -112,7 +112,7 @@ function About() {
             {
               icon: Compass,
               title: "Our Mission",
-              body: "To make disciples who love God, love people, and make Jesus known — in our homes, our city, and to the ends of the earth.",
+              body: "To make disciples who love God, love people, and make Jesus known - in our homes, our city, and to the ends of the earth.",
             },
             {
               icon: Sprout,

@@ -69,7 +69,7 @@ function Index() {
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/85 leading-relaxed px-4 sm:px-0">
             New Life Christian Fellowship is a warm community of people learning to follow Jesus
-            together. Whoever you are, wherever you've been — there's a seat for you.
+            together. Whoever you are, wherever you've been, there's a seat for you.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 px-4 sm:px-0">
             <Link
@@ -170,7 +170,7 @@ function Index() {
               "Every story matters here."
             </h2>
             <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              When you walk through our doors, you're not walking into a program — you're walking
+              When you walk through our doors, you're not walking into a program, you're walking
               into a family. We believe the gospel changes everything, and we're committed to
               helping one another live it out.
             </p>
@@ -198,7 +198,7 @@ function Index() {
                 to: "/ministries",
                 icon: Users,
                 title: "Ministries",
-                desc: "Find your people — from kids to seniors, we grow together.",
+                desc: "Find your people - from kids to seniors, we grow together.",
               },
               {
                 to: "/sermons",
@@ -287,7 +287,7 @@ function Index() {
               },
               {
                 img: c3,
-                quote: "Worshiping here has changed how I see God — closer, kinder.",
+                quote: "Worshiping here has changed how I see God - closer, kinder.",
                 name: "Priya S.",
               },
             ].map((t, i) => (
@@ -309,7 +309,7 @@ function Index() {
                   <p className="font-serif text-base sm:text-lg text-primary italic leading-snug">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <p className="mt-4 text-sm text-muted-foreground font-semibold">— {t.name}</p>
+                  <p className="mt-4 text-sm text-muted-foreground font-semibold">- {t.name}</p>
                 </figcaption>
               </figure>
             ))}

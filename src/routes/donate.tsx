@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/donate")({
   head: () => ({
     meta: [
-      { title: "Give — New Life Christian Fellowship" },
+      { title: "Give - New Life Christian Fellowship" },
       {
         name: "description",
         content:
@@ -58,7 +58,7 @@ function Donate() {
           >
             <h2 className="font-serif text-2xl sm:text-3xl text-primary">Make a gift</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Payment processing coming soon — this is a preview of the giving flow.
+              Payment processing coming soon - this is a preview of the giving flow.
             </p>
 
             <div className="mt-6 sm:mt-8">

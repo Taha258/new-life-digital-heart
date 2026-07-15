@@ -73,9 +73,6 @@ export function Navbar() {
                   )}
                 >
                   {l.label}
-                  {active && (
-                    <span className="absolute -bottom-0.5 left-3 right-3 h-0.5 bg-gold rounded-full" />
-                  )}
                 </Link>
               );
             })}

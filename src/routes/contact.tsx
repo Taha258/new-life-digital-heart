@@ -9,7 +9,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Prayer — New Life Christian Fellowship" },
+      { title: "Contact & Prayer - New Life Christian Fellowship" },
       {
         name: "description",
         content: "Get in touch, submit a prayer request, or find our location.",

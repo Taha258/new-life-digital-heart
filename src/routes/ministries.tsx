@@ -17,15 +17,15 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/ministries")({
   head: () => ({
     meta: [
-      { title: "Ministries — New Life Christian Fellowship" },
+      { title: "Ministries - New Life Christian Fellowship" },
       {
         name: "description",
-        content: "Find your community — ministries for every age and season of life.",
+        content: "Find your community - ministries for every age and season of life.",
       },
       { property: "og:title", content: "Ministries at New Life" },
       {
         property: "og:description",
-        content: "Youth, kids, women, men, worship, outreach — there's a place for you.",
+        content: "Youth, kids, women, men, worship, outreach - there's a place for you.",
       },
     ],
   }),
@@ -61,7 +61,7 @@ const ministries = [
   {
     icon: HandHeart,
     title: "Outreach",
-    desc: "Meeting real needs — food, shelter, mentorship — across our city.",
+    desc: "Meeting real needs - food, shelter, mentorship - across our city.",
   },
   {
     icon: Coffee,
@@ -83,7 +83,7 @@ function Ministries() {
       <PageHeader
         eyebrow="Get involved"
         title="A place for every season."
-        description="However you're wired, whatever you love — there's a spot at New Life where you belong and can make a difference."
+        description="However you're wired, whatever you love - there's a spot at New Life where you belong and can make a difference."
         image={heroMinistries}
         imageAlt="Volunteers serving together in community"
       />

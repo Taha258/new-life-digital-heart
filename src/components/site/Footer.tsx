@@ -27,7 +27,7 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-5 text-sm opacity-80 leading-relaxed">
-            A place to belong, a family in Christ. Come as you are — you are loved here.
+            A place to belong, a family in Christ. Come as you are - you are loved here.
           </p>
           <div className="mt-6 flex gap-3">
             {[Facebook, Instagram, Youtube].map((Icon, i) => (

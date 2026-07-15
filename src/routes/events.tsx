@@ -9,7 +9,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 export const Route = createFileRoute("/events")({
   head: () => ({
     meta: [
-      { title: "Events — New Life Christian Fellowship" },
+      { title: "Events - New Life Christian Fellowship" },
       {
         name: "description",
         content: "Upcoming church events, retreats, and community gatherings.",
@@ -90,7 +90,7 @@ function Events() {
       <PageHeader
         eyebrow="What's happening"
         title="Upcoming events"
-        description="From Sunday gatherings to retreats and service days — we'd love for you to join us."
+        description="From Sunday gatherings to retreats and service days - we'd love for you to join us."
         image={heroEvents}
         imageAlt="Evening community gathering with candles and lights"
       />
